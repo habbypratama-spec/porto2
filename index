@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Haven Coffee — Specialty Coffee, Authentic Experience</title>
+    <meta name="description" content="Brew Haven Coffee - Kafe specialty coffee di Bandung dengan kopi single origin Indonesia, manual brew, espresso, pastry artisan, dan ruang coworking yang nyaman.">
+    <meta property="og:title" content="Brew Haven Coffee — Setiap Cangkir, Sebuah Cerita">
+    <meta property="og:description" content="Kafe specialty coffee di Bandung. Kopi single origin, manual brew, pastry artisan, dan ruang coworking yang nyaman.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --espresso: #2B1D17; --espresso-light: #3D2B22; --beige: #F5EFE8; --beige-dark: #E8DFD4;
+            --caramel: #C68642; --caramel-light: #D4A574; --forest: #3F5E45; --forest-light: #5A7A5F;
+            --warm-white: #FCFAF8; --cream: #F8F4EF; --text-primary: #1A120E; --text-secondary: #5C4A3F;
+            --text-muted: #8B7B6E; --border: #E8DFD4; --radius-sm: 8px; --radius-md: 12px;
+            --radius-lg: 16px; --radius-xl: 24px; --shadow-sm: 0 1px 3px rgba(43,29,23,0.04);
+            --shadow-md: 0 4px 12px rgba(43,29,23,0.06); --shadow-lg: 0 12px 32px rgba(43,29,23,0.08);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body {
+            font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color:var(--text-primary);
+            background:var(--warm-white); line-height:1.7; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+        }
+        ::-webkit-scrollbar { width:6px; }
+        ::-webkit-scrollbar-track { background:var(--beige); }
+        ::-webkit-scrollbar-thumb { background:var(--caramel); border-radius:3px; }
+        .font-serif { font-family:'Playfair Display', Georgia, serif; }
+        .font-sans { font-family:'Inter', sans-serif; }
+        .display-1 { font-family:'Playfair Display', serif; font-size:clamp(3rem, 6vw, 5.5rem); font-weight:500; line-height:1.1; letter-spacing:-0.02em; }
+        .display-2 { font-family:'Playfair Display', serif; font-size:clamp(2.5rem, 5vw, 4rem); font-weight:500; line-height:1.15; letter-spacing:-0.01em; }
+        .heading-1 { font-family:'Playfair Display', serif; font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:600; line-height:1.2; }
+        .heading-2 { font-family:'Playfair Display', serif; font-size:clamp(1.5rem, 2.5vw, 2rem); font-weight:600; line-height:1.3; }
+        .heading-3 { font-family:'Inter', sans-serif; font-size:clamp(1.125rem, 1.5vw, 1.375rem); font-weight:600; line-height:1.4; }
+        .body-lg { font-size:1.0625rem; line-height:1.8; color:var(--text-secondary); }
+        .body-sm { font-size:0.9375rem; line-height:1.7; color:var(--text-muted); }
+        .caption { font-size:0.6875rem; font-weight:600; text-transform:uppercase; letter-spacing:0.15em; color:var(--caramel); }
+        .container { max-width:1200px; margin:0 auto; padding:0 28px; }
+        .container-narrow { max-width:720px; margin:0 auto; padding:0 28px; }
+        .section { padding:120px 0; }
+        .section-beige { background:var(--beige); }
+        .section-cream { background:var(--cream); }
+        .section-dark { background:var(--espresso); color:var(--beige); }
+        .btn {
+            display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 32px;
+            font-size:0.875rem; font-weight:600; border-radius:100px; cursor:pointer; transition:var(--transition);
+            border:none; text-decoration:none; white-space:nowrap; letter-spacing:0.02em;
+        }
+        .btn-primary { background:var(--espresso); color:var(--warm-white); }
+        .btn-primary:hover { background:var(--espresso-light); transform:translateY(-2px); box-shadow:var(--shadow-lg); }
+        .btn-caramel { background:var(--caramel); color:var(--warm-white); }
+        .btn-caramel:hover { background:var(--caramel-light); transform:translateY(-2px); box-shadow:var(--shadow-lg); }
+        .btn-outline { background:transparent; color:var(--espresso); border:1.5px solid var(--espresso); }
+        .btn-outline:hover { background:var(--espresso); color:var(--warm-white); }
+        .btn-outline-light { background:transparent; color:var(--beige); border:1.5px solid rgba(245,239,232,0.4); }
+        .btn-outline-light:hover { background:rgba(245,239,232,0.1); border-color:var(--beige); }
+        .card { background:var(--warm-white); border-radius:var(--radius-lg); overflow:hidden; transition:var(--transition); }
+        .card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+        .nav {
+            position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(252,250,248,0.92);
+            backdrop-filter:blur(20px) saturate(180%); border-bottom:1px solid rgba(232,223,212,0.5);
+            transition:var(--transition);
+        }
+        .nav.scrolled { box-shadow:var(--shadow-sm); }
+        .nav-inner { display:flex; align-items:center; justify-content:space-between; height:72px; }
+        .nav-logo { display:flex; align-items:center; gap:10px; font-family:'Playfair Display', serif; font-weight:600; font-size:1.25rem; color:var(--espresso); text-decoration:none; letter-spacing:-0.01em; }
+        .nav-logo-icon { width:36px; height:36px; background:var(--espresso); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--beige); }
+        .nav-links { display:flex; gap:36px; align-items:center; }
+        .nav-link { color:var(--text-secondary); text-decoration:none; font-weight:500; font-size:0.8125rem; transition:var(--transition); position:relative; letter-spacing:0.04em; text-transform:uppercase; }
+        .nav-link:hover, .nav-link.active { color:var(--espresso); }
+        .nav-link::after { content:''; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:0; height:2px; background:var(--caramel); transition:var(--transition); border-radius:2px; }
+        .nav-link:hover::after, .nav-link.active::after { width:20px; }
+        .nav-cta { display:flex; gap:12px; align-items:center; }
+        .nav-mobile-toggle { display:none; background:none; border:none; cursor:pointer; color:var(--espresso); }
+        .mobile-nav { position:fixed; top:0; right:-100%; width:100%; height:100vh; background:var(--warm-white); z-index:1001; transition:var(--transition-slow); padding:100px 32px 32px; display:flex; flex-direction:column; gap:8px; }
+        .mobile-nav.open { right:0; }
+        .mobile-nav-overlay { position:fixed; inset:0; background:rgba(43,29,23,0.4); z-index:1000; opacity:0; pointer-events:none; transition:var(--transition); }
+        .mobile-nav-overlay.open { opacity:1; pointer-events:all; }
+        .mobile-nav-link { padding:16px; font-family:'Playfair Display', serif; font-size:1.25rem; font-weight:500; color:var(--espresso); text-decoration:none; border-bottom:1px solid var(--border); transition:var(--transition); }
+        .mobile-nav-link:hover { color:var(--caramel); padding-left:24px; }
+        .hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; background:var(--espresso); color:var(--beige); }
+        .hero-img { position:absolute; inset:0; object-fit:cover; width:100%; height:100%; opacity:0.45; filter:brightness(0.7); }
+        .hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(43,29,23,0.3) 0%, rgba(43,29,23,0.6) 50%, rgba(43,29,23,0.9) 100%); }
+        .hero-content { position:relative; z-index:2; padding-top:80px; }
+        .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:10px 20px; background:rgba(245,239,232,0.1); backdrop-filter:blur(10px); border:1px solid rgba(245,239,232,0.15); border-radius:100px; font-size:0.8125rem; font-weight:500; margin-bottom:32px; letter-spacing:0.05em; }
+        .hero-badge-dot { width:6px; height:6px; background:var(--caramel); border-radius:50%; animation:pulse 2.5s infinite; }
+        @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.6; transform:scale(1.3); } }
+        .hero-title { margin-bottom:24px; font-style:italic; }
+        .hero-title span { font-style:normal; color:var(--caramel-light); }
+        .hero-desc { font-size:1.125rem; color:rgba(245,239,232,0.75); max-width:520px; margin-bottom:40px; line-height:1.8; font-weight:300; }
+        .hero-buttons { display:flex; gap:16px; flex-wrap:wrap; }
+        .hero-scroll { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(245,239,232,0.5); font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; }
+        .hero-scroll-line { width:1px; height:40px; background:linear-gradient(to bottom, var(--caramel), transparent); animation:scrollLine 2s infinite; }
+        @keyframes scrollLine { 0% { transform:scaleY(0); transform-origin:top; } 50% { transform:scaleY(1); transform-origin:top; } 50.1% { transform-origin:bottom; } 100% { transform:scaleY(0); transform-origin:bottom; } }
+        .section-header { text-align:center; max-width:640px; margin:0 auto 64px; }
+        .section-header.left { text-align:left; margin-left:0; }
+        .section-tag { display:inline-flex; align-items:center; gap:10px; margin-bottom:16px; }
+        .section-tag-line { width:24px; height:1px; background:var(--caramel); }
+        .section-title { margin-bottom:16px; }
+        .section-desc { color:var(--text-muted); font-size:1.0625rem; line-height:1.7; }
+        .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+        .story-img { border-radius:var(--radius-xl); overflow:hidden; position:relative; aspect-ratio:4/5; }
+        .story-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease; }
+        .story-img:hover img { transform:scale(1.04); }
+        .story-img-frame { position:absolute; inset:16px; border:1px solid rgba(198,134,66,0.3); border-radius:var(--radius-lg); pointer-events:none; }
+        .menu-tabs { display:flex; justify-content:center; gap:8px; margin-bottom:48px; flex-wrap:wrap; }
+        .menu-tab { padding:10px 24px; border-radius:100px; border:1px solid var(--border); background:var(--warm-white); color:var(--text-muted); font-weight:500; font-size:0.875rem; cursor:pointer; transition:var(--transition); }
+        .menu-tab:hover, .menu-tab.active { background:var(--espresso); color:var(--beige); border-color:var(--espresso); }
+        .menu-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
+        .menu-item { display:flex; gap:20px; padding:24px; border-radius:var(--radius-lg); background:var(--warm-white); border:1px solid var(--border); transition:var(--transition); }
+        .menu-item:hover { border-color:var(--caramel); box-shadow:var(--shadow-md); transform:translateY(-2px); }
+        .menu-item-img { width:80px; height:80px; border-radius:var(--radius-md); background:var(--beige); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--caramel); font-size:1.5rem; overflow:hidden; }
+        .menu-item-img img { width:100%; height:100%; object-fit:cover; }
+        .menu-item-content { flex:1; }
+        .menu-item-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
+        .menu-item-name { font-family:'Playfair Display', serif; font-weight:600; font-size:1.125rem; color:var(--espresso); }
+        .menu-item-price { font-weight:700; font-size:1rem; color:var(--caramel); white-space:nowrap; }
+        .menu-item-desc { font-size:0.875rem; color:var(--text-muted); line-height:1.6; margin-bottom:8px; }
+        .menu-item-tag { display:inline-block; padding:3px 10px; background:var(--beige); border-radius:100px; font-size:0.6875rem; font-weight:600; color:var(--caramel); text-transform:uppercase; letter-spacing:0.05em; }
+        .bean-card { padding:32px; border-radius:var(--radius-lg); background:var(--warm-white); border:1px solid var(--border); transition:var(--transition); text-align:center; }
+        .bean-card:hover { border-color:var(--caramel); box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+        .bean-origin { font-size:0.6875rem; font-weight:600; text-transform:uppercase; letter-spacing:0.15em; color:var(--caramel); margin-bottom:8px; }
+        .bean-name { font-family:'Playfair Display', serif; font-weight:600; font-size:1.375rem; margin-bottom:8px; color:var(--espresso); }
+        .bean-process { font-size:0.8125rem; color:var(--text-muted); margin-bottom:12px; }
+        .bean-roast { display:inline-flex; align-items:center; gap:6px; padding:4px 12px; background:var(--beige); border-radius:100px; font-size:0.75rem; font-weight:600; color:var(--text-secondary); margin-bottom:16px; }
+        .bean-notes { font-size:0.875rem; color:var(--text-muted); margin-bottom:20px; line-height:1.6; }
+        .bean-price { font-family:'Playfair Display', serif; font-weight:700; font-size:1.5rem; color:var(--espresso); }
+        .bean-weight { font-size:0.8125rem; color:var(--text-muted); }
+        .workshop-card { padding:40px; border-radius:var(--radius-xl); background:var(--warm-white); border:1px solid var(--border); transition:var(--transition); }
+        .workshop-card:hover { border-color:var(--caramel); box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+        .workshop-date { display:inline-flex; align-items:center; gap:8px; padding:8px 16px; background:var(--beige); border-radius:100px; font-size:0.8125rem; font-weight:600; color:var(--text-secondary); margin-bottom:20px; }
+        .workshop-title { font-family:'Playfair Display', serif; font-weight:600; font-size:1.5rem; margin-bottom:12px; color:var(--espresso); }
+        .workshop-desc { font-size:0.9375rem; color:var(--text-muted); line-height:1.7; margin-bottom:24px; }
+        .workshop-meta { display:flex; gap:24px; font-size:0.875rem; color:var(--text-muted); margin-bottom:24px; }
+        .workshop-meta span { display:flex; align-items:center; gap:6px; }
+        .workshop-price { font-family:'Playfair Display', serif; font-weight:700; font-size:1.75rem; color:var(--caramel); margin-bottom:20px; }
+        .testimonial-card { padding:40px; border-radius:var(--radius-xl); background:var(--warm-white); border:1px solid var(--border); transition:var(--transition); }
+        .testimonial-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+        .testimonial-stars { display:flex; gap:4px; margin-bottom:20px; color:var(--caramel); }
+        .testimonial-text { font-family:'Playfair Display', serif; font-size:1.125rem; line-height:1.8; color:var(--text-secondary); font-style:italic; margin-bottom:24px; }
+        .testimonial-author { display:flex; align-items:center; gap:14px; }
+        .testimonial-avatar { width:48px; height:48px; border-radius:50%; background:var(--beige); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display', serif; font-weight:600; color:var(--caramel); font-size:1.125rem; }
+        .testimonial-name { font-weight:600; font-size:0.9375rem; }
+        .testimonial-title { font-size:0.8125rem; color:var(--text-muted); }
+        .gallery-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; }
+        .gallery-item { border-radius:var(--radius-md); overflow:hidden; aspect-ratio:1; position:relative; cursor:pointer; }
+        .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; }
+        .gallery-item:hover img { transform:scale(1.08); }
+        .gallery-item-overlay { position:absolute; inset:0; background:rgba(43,29,23,0.4); opacity:0; transition:var(--transition); display:flex; align-items:center; justify-content:center; }
+        .gallery-item:hover .gallery-item-overlay { opacity:1; }
+        .gallery-item:nth-child(1) { grid-column:span 2; grid-row:span 2; }
+        .faq-item { border-bottom:1px solid var(--border); }
+        .faq-question { display:flex; justify-content:space-between; align-items:center; padding:24px 0; cursor:pointer; transition:var(--transition); }
+        .faq-question:hover { color:var(--caramel); }
+        .faq-question h3 { font-weight:600; font-size:1rem; padding-right:24px; color:var(--espresso); }
+        .faq-icon { width:32px; height:32px; border-radius:50%; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--espresso); transition:var(--transition); flex-shrink:0; }
+        .faq-item.open .faq-icon { background:var(--caramel); color:var(--warm-white); transform:rotate(180deg); }
+        .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height:300px; }
+        .faq-answer p { padding-bottom:24px; color:var(--text-muted); line-height:1.7; font-size:0.9375rem; }
+        .cta-banner { position:relative; padding:100px 0; background:var(--espresso); overflow:hidden; border-radius:var(--radius-xl); margin:0 28px; max-width:1144px; margin-left:auto; margin-right:auto; }
+        .cta-banner-content { position:relative; z-index:2; text-align:center; color:var(--beige); max-width:600px; margin:0 auto; padding:0 28px; }
+        .cta-banner-title { font-family:'Playfair Display', serif; font-size:clamp(2rem, 4vw, 3rem); font-weight:500; margin-bottom:20px; font-style:italic; }
+        .cta-banner-desc { font-size:1.0625rem; color:rgba(245,239,232,0.7); margin-bottom:40px; line-height:1.7; }
+        .footer { background:var(--espresso); color:var(--beige); padding:80px 0 0; }
+        .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:48px; margin-bottom:64px; }
+        .footer-brand-logo { display:flex; align-items:center; gap:10px; font-family:'Playfair Display', serif; font-weight:600; font-size:1.25rem; margin-bottom:20px; color:var(--beige); }
+        .footer-brand-desc { font-size:0.9375rem; line-height:1.7; margin-bottom:24px; color:rgba(245,239,232,0.6); }
+        .footer-social { display:flex; gap:12px; }
+        .footer-social-link { width:40px; height:40px; border-radius:50%; border:1px solid rgba(245,239,232,0.2); display:flex; align-items:center; justify-content:center; color:rgba(245,239,232,0.6); transition:var(--transition); text-decoration:none; }
+        .footer-social-link:hover { background:var(--caramel); border-color:var(--caramel); color:var(--warm-white); }
+        .footer-title { font-family:'Playfair Display', serif; font-weight:600; font-size:1rem; margin-bottom:24px; color:var(--beige); }
+        .footer-links { display:flex; flex-direction:column; gap:12px; }
+        .footer-link { color:rgba(245,239,232,0.6); text-decoration:none; font-size:0.875rem; transition:var(--transition); }
+        .footer-link:hover { color:var(--caramel); }
+        .footer-contact-item { display:flex; gap:12px; margin-bottom:16px; }
+        .footer-contact-icon { color:var(--caramel); flex-shrink:0; }
+        .footer-contact-text { font-size:0.875rem; line-height:1.5; color:rgba(245,239,232,0.6); }
+        .footer-newsletter-form { display:flex; gap:8px; }
+        .footer-newsletter-input { flex:1; padding:12px 16px; border-radius:100px; border:1px solid rgba(245,239,232,0.2); background:rgba(245,239,232,0.05); color:var(--beige); font-size:0.875rem; outline:none; transition:var(--transition); }
+        .footer-newsletter-input:focus { border-color:var(--caramel); }
+        .footer-newsletter-input::placeholder { color:rgba(245,239,232,0.4); }
+        .footer-bottom { border-top:1px solid rgba(245,239,232,0.1); padding:24px 0; display:flex; justify-content:space-between; align-items:center; font-size:0.8125rem; color:rgba(245,239,232,0.5); }
+        .page { display:none; animation:fadeIn 0.6s ease; }
+        .page.active { display:block; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        .breadcrumb { padding:100px 0 40px; background:var(--beige); border-bottom:1px solid var(--border); }
+        .breadcrumb-inner { display:flex; align-items:center; gap:8px; font-size:0.875rem; color:var(--text-muted); }
+        .breadcrumb-link { color:var(--text-secondary); text-decoration:none; transition:var(--transition); }
+        .breadcrumb-link:hover { color:var(--caramel); }
+        .breadcrumb-current { color:var(--espresso); font-weight:600; }
+        .team-card { border-radius:var(--radius-lg); overflow:hidden; background:var(--warm-white); border:1px solid var(--border); transition:var(--transition); }
+        .team-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+        .team-img { aspect-ratio:3/4; background:var(--beige); display:flex; align-items:center; justify-content:center; position:relative; }
+        .team-img-placeholder { font-family:'Playfair Display', serif; font-size:2.5rem; font-weight:600; color:var(--caramel); opacity:0.4; }
+        .team-info { padding:24px; }
+        .team-name { font-family:'Playfair Display', serif; font-weight:600; font-size:1.125rem; margin-bottom:4px; color:var(--espresso); }
+        .team-title { color:var(--caramel); font-weight:600; font-size:0.8125rem; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em; }
+        .team-desc { font-size:0.875rem; color:var(--text-muted); line-height:1.6; }
+        .merch-card { border-radius:var(--radius-lg); overflow:hidden; background:var(--warm-white); border:1px solid var(--border); transition:var(--transition); }
+        .merch-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+        .merch-img { aspect-ratio:1; background:var(--beige); display:flex; align-items:center; justify-content:center; position:relative; }
+        .merch-img-placeholder { font-size:2rem; color:var(--caramel); opacity:0.4; }
+        .merch-info { padding:24px; }
+        .merch-name { font-family:'Playfair Display', serif; font-weight:600; font-size:1.125rem; margin-bottom:8px; color:var(--espresso); }
+        .merch-desc { font-size:0.875rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px; }
+        .merch-price { font-family:'Playfair Display', serif; font-weight:700; font-size:1.25rem; color:var(--caramel); }
+        .event-card { padding:32px; border-radius:var(--radius-lg); background:var(--warm-white); border:1px solid var(--border); transition:var(--transition); }
+        .event-card:hover { border-color:var(--caramel); box-shadow:var(--shadow-md); transform:translateY(-2px); }
+        .event-date { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; background:var(--beige); border-radius:100px; font-size:0.8125rem; font-weight:600; color:var(--text-secondary); margin-bottom:16px; }
+        .event-title { font-family:'Playfair Display', serif; font-weight:600; font-size:1.25rem; margin-bottom:8px; color:var(--espresso); }
+        .event-desc { font-size:0.9375rem; color:var(--text-muted); line-height:1.6; }
+        .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; }
+        .contact-form { display:flex; flex-direction:column; gap:20px; }
+        .form-group { display:flex; flex-direction:column; gap:6px; }
+        .form-label { font-weight:600; font-size:0.8125rem; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em; }
+        .form-input, .form-textarea, .form-select { padding:14px 18px; border-radius:var(--radius-md); border:1.5px solid var(--border); background:var(--warm-white); font-size:0.9375rem; font-family:inherit; transition:var(--transition); outline:none; color:var(--text-primary); }
+        .form-input:focus, .form-textarea:focus, .form-select:focus { border-color:var(--caramel); box-shadow:0 0 0 3px rgba(198,134,66,0.1); }
+        .form-textarea { min-height:120px; resize:vertical; }
+        .contact-info-card { padding:32px; border-radius:var(--radius-lg); background:var(--warm-white); border:1px solid var(--border); margin-bottom:20px; }
+        .contact-info-title { font-family:'Playfair Display', serif; font-weight:600; font-size:1.125rem; margin-bottom:20px; display:flex; align-items:center; gap:10px; color:var(--espresso); }
+        .contact-info-item { display:flex; gap:14px; margin-bottom:16px; }
+        .contact-info-icon { width:40px; height:40px; background:var(--beige); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; color:var(--caramel); flex-shrink:0; }
+        .contact-info-text h4 { font-weight:600; font-size:0.9375rem; margin-bottom:2px; color:var(--espresso); }
+        .contact-info-text p { font-size:0.875rem; color:var(--text-muted); }
+        .map-placeholder { aspect-ratio:16/9; background:var(--beige); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; color:var(--text-muted); font-weight:500; border:2px dashed var(--border); }
+        .hours-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        .hours-item { padding:16px; background:var(--warm-white); border-radius:var(--radius-md); border:1px solid var(--border); }
+        .hours-day { font-weight:600; font-size:0.875rem; color:var(--espresso); margin-bottom:4px; }
+        .hours-time { font-size:0.875rem; color:var(--text-muted); }
+        .reservation-form { max-width:600px; margin:0 auto; }
+        .privacy-content { max-width:800px; margin:0 auto; }
+        .privacy-content h2 { font-family:'Playfair Display', serif; font-weight:600; font-size:1.5rem; margin:40px 0 16px; color:var(--espresso); }
+        .privacy-content p { color:var(--text-muted); line-height:1.8; margin-bottom:16px; }
+        .privacy-content ul { margin-left:24px; margin-bottom:16px; color:var(--text-muted); }
+        .privacy-content li { margin-bottom:8px; line-height:1.7; }
+        .error-page { min-height:80vh; display:flex; align-items:center; justify-content:center; text-align:center; }
+        .error-code { font-family:'Playfair Display', serif; font-size:8rem; font-weight:500; color:var(--beige-dark); line-height:1; }
+        .reveal { opacity:0; transform:translateY(30px); transition:all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+        .loading { position:fixed; inset:0; background:var(--warm-white); z-index:9999; display:flex; align-items:center; justify-content:center; transition:opacity 0.5s ease; }
+        .loading.hidden { opacity:0; pointer-events:none; }
+        .loading-spinner { width:40px; height:40px; border:2px solid var(--beige); border-top-color:var(--caramel); border-radius:50%; animation:spin 1s linear infinite; }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        @media (max-width:1024px) {
+            .section { padding:80px 0; }
+            .story-grid, .contact-grid { grid-template-columns:1fr; gap:40px; }
+            .menu-grid { grid-template-columns:1fr; }
+            .gallery-grid { grid-template-columns:repeat(2, 1fr); }
+            .gallery-item:nth-child(1) { grid-column:span 2; grid-row:span 1; }
+            .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+            .nav-links { display:none; }
+            .nav-mobile-toggle { display:flex; }
+        }
+        @media (max-width:640px) {
+            .gallery-grid, .footer-grid { grid-template-columns:1fr; }
+            .gallery-item:nth-child(1) { grid-column:span 1; }
+            .hero-buttons { flex-direction:column; }
+            .hero-buttons .btn { width:100%; justify-content:center; }
+            .cta-banner { margin:0 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading -->
+    <div class="loading" id="loading"><div class="loading-spinner"></div></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="nav-logo" onclick="navigateTo('home'); return false;">
+                    <div class="nav-logo-icon"><i data-lucide="coffee" style="width:18px;height:18px;"></i></div>
+                    <span>Brew Haven</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link active" data-page="home" onclick="navigateTo('home'); return false;">Beranda</a>
+                    <a href="#" class="nav-link" data-page="about" onclick="navigateTo('about'); return false;">Tentang</a>
+                    <a href="#" class="nav-link" data-page="menu" onclick="navigateTo('menu'); return false;">Menu</a>
+                    <a href="#" class="nav-link" data-page="beans" onclick="navigateTo('beans'); return false;">Biji Kopi</a>
+                    <a href="#" class="nav-link" data-page="workshops" onclick="navigateTo('workshops'); return false;">Workshop</a>
+                    <a href="#" class="nav-link" data-page="events" onclick="navigateTo('events'); return false;">Event</a>
+                    <a href="#" class="nav-link" data-page="merchandise" onclick="navigateTo('merchandise'); return false;">Merch</a>
+                    <a href="#" class="nav-link" data-page="contact" onclick="navigateTo('contact'); return false;">Kontak</a>
+                </div>
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-caramel" style="padding:10px 24px; font-size:0.8125rem;" onclick="navigateTo('reservation'); return false;">
+                        <i data-lucide="calendar" style="width:14px;height:14px;"></i> Reservasi
+                    </a>
+                </div>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()">
+                    <i data-lucide="menu" style="width:24px;height:24px;"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('home'); toggleMobileNav(); return false;">Beranda</a>
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('about'); toggleMobileNav(); return false;">Tentang Kami</a>
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('menu'); toggleMobileNav(); return false;">Menu</a>
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('beans'); toggleMobileNav(); return false;">Biji Kopi</a>
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('workshops'); toggleMobileNav(); return false;">Workshop</a>
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('events'); toggleMobileNav(); return false;">Event</a>
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('merchandise'); toggleMobileNav(); return false;">Merchandise</a>
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('reservation'); toggleMobileNav(); return false;">Reservasi</a>
+        <a href="#" class="mobile-nav-link" onclick="navigateTo('contact'); toggleMobileNav(); return false;">Kontak</a>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div class="page active" id="page-home">
+        <!-- Hero -->
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&h=1080&fit=crop&q=80" alt="Kafe specialty coffee dengan interior hangat dan minimal" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <div class="hero-badge-dot"></div>
+                        <span>Specialty Coffee Since 2018</span>
+                    </div>
+                    <h1 class="hero-title display-1">
+                        Setiap Cangkir,<br>
+                        <span>Sebuah Cerita</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Kopi single origin dari petani lokal Indonesia, diseduh dengan passion oleh barista bersertifikat, dalam ruang yang dirancang untuk memperlambat waktu.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-caramel" onclick="navigateTo('reservation'); return false;">
+                            <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+                            Reservasi Meja
+                        </a>
+                        <a href="#" class="btn btn-outline-light" onclick="navigateTo('menu'); return false;">
+                            <i data-lucide="book-open" style="width:16px;height:16px;"></i>
+                            Lihat Menu
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Scroll</span>
+                <div class="hero-scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Brand Intro -->
+        <section class="section section-beige">
+            <div class="container">
+                <div class="story-grid">
+                    <div>
+                        <div class="section-header left">
+                            <div class="section-tag">
+                                <div class="section-tag-line"></div>
+                                <span class="caption">Cerita Kami</span>
+                            </div>
+                            <h2 class="section-title heading-1">Lebih dari Sekadar Kopi</h2>
+                        </div>
+                        <p class="body-lg" style="margin-bottom:20px;">
+                            Brew Haven Coffee lahir dari kecintaan sederhana terhadap secangkir kopi yang sempurna. Didirikan pada tahun 2018 di tengah kota Bandung, kami memulai perjalanan dengan satu misi: menghadirkan pengalaman kopi specialty yang autentik, hangat, dan tak terlupakan.
+                        </p>
+                        <p class="body-lg" style="margin-bottom:32px;">
+                            Kami percaya bahwa kopi bukan sekadar minuman—ia adalah momen. Momen untuk berhenti sejenak, bernapas, dan menikmati keindahan sederhana. Dari biji kopi pilihan petani lokal hingga tangan barista berpengalaman kami, setiap cangkir adalah hasil passion dan ketekunan.
+                        </p>
+                        <a href="#" class="btn btn-outline" onclick="navigateTo('about'); return false;">
+                            Pelajari Lebih Lanjut
+                            <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                        </a>
+                    </div>
+                    <div class="story-img">
+                        <img src="https://images.unsplash.com/photo-1442512595367-42736f3e576f?w=800&h=1000&fit=crop&q=80" alt="Close-up biji kopi yang baru di-roast dengan aroma menggoda">
+                        <div class="story-img-frame"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signature Drinks -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Signature</span>
+                    </div>
+                    <h2 class="section-title heading-1">Kreasi Khas Brew Haven</h2>
+                    <p class="section-desc">Minuman spesial yang diracik dengan cermat, hanya tersedia di Brew Haven.</p>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:24px;">
+                    <div class="card" style="display:flex; overflow:hidden;">
+                        <div style="width:200px; flex-shrink:0; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel); font-size:3rem;">
+                            <i data-lucide="cup-soda" style="width:48px;height:48px;"></i>
+                        </div>
+                        <div style="padding:32px; flex:1;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+                                <h3 class="font-serif" style="font-size:1.375rem; font-weight:600; color:var(--espresso);">Haven Affogato</h3>
+                                <span style="font-family:'Playfair Display', serif; font-weight:700; font-size:1.25rem; color:var(--caramel);">Rp 45.000</span>
+                            </div>
+                            <p class="body-sm" style="margin-bottom:16px;">Double shot espresso dituang di atas gelato vanilla buatan sendiri. Panas bertemu dingin dalam harmoni sempurna.</p>
+                            <span class="menu-item-tag">Signature</span>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex; overflow:hidden;">
+                        <div style="width:200px; flex-shrink:0; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel); font-size:3rem;">
+                            <i data-lucide="droplets" style="width:48px;height:48px;"></i>
+                        </div>
+                        <div style="padding:32px; flex:1;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+                                <h3 class="font-serif" style="font-size:1.375rem; font-weight:600; color:var(--espresso);">Coconut Cold Brew</h3>
+                                <span style="font-family:'Playfair Display', serif; font-weight:700; font-size:1.25rem; color:var(--caramel);">Rp 42.000</span>
+                            </div>
+                            <p class="body-sm" style="margin-bottom:16px;">Cold brew dengan fresh coconut water dan coconut cream. Tropical twist yang menyegarkan.</p>
+                            <span class="menu-item-tag">Seasonal</span>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex; overflow:hidden;">
+                        <div style="width:200px; flex-shrink:0; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel); font-size:3rem;">
+                            <i data-lucide="flame" style="width:48px;height:48px;"></i>
+                        </div>
+                        <div style="padding:32px; flex:1;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+                                <h3 class="font-serif" style="font-size:1.375rem; font-weight:600; color:var(--espresso);">Spiced Orange Mocha</h3>
+                                <span style="font-family:'Playfair Display', serif; font-weight:700; font-size:1.25rem; color:var(--caramel);">Rp 44.000</span>
+                            </div>
+                            <p class="body-sm" style="margin-bottom:16px;">Mocha dengan infused jeruk dan rempah-rempah hangat. Hanya tersedia selama musim dingin.</p>
+                            <span class="menu-item-tag">Seasonal</span>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex; overflow:hidden;">
+                        <div style="width:200px; flex-shrink:0; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel); font-size:3rem;">
+                            <i data-lucide="zap" style="width:48px;height:48px;"></i>
+                        </div>
+                        <div style="padding:32px; flex:1;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+                                <h3 class="font-serif" style="font-size:1.375rem; font-weight:600; color:var(--espresso);">Espresso Tonic</h3>
+                                <span style="font-family:'Playfair Display', serif; font-weight:700; font-size:1.25rem; color:var(--caramel);">Rp 38.000</span>
+                            </div>
+                            <p class="body-sm" style="margin-bottom:16px;">Double shot espresso dengan tonic water dan slice jeruk. Refreshing, bubbly, dan unik.</p>
+                            <span class="menu-item-tag">Signature</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:48px;">
+                    <a href="#" class="btn btn-outline" onclick="navigateTo('menu'); return false;">
+                        Lihat Menu Lengkap
+                        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Selection -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Kuliner</span>
+                    </div>
+                    <h2 class="section-title heading-1">Sajian untuk Setiap Momen</h2>
+                    <p class="section-desc">Dari sarapan pagi hingga dessert sore, setiap hidangan kami disiapkan dengan bahan segar dan sentuhan artisan.</p>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;">
+                    <div class="card" style="overflow:hidden;">
+                        <div style="aspect-ratio:16/10; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel);">
+                            <i data-lucide="sun" style="width:40px;height:40px;"></i>
+                        </div>
+                        <div style="padding:28px;">
+                            <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Sarapan</h3>
+                            <p class="body-sm">Avocado Toast, Eggs Benedict, dan Croissant butter Prancis autentik. Fresh dari oven setiap pagi.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="overflow:hidden;">
+                        <div style="aspect-ratio:16/10; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel);">
+                            <i data-lucide="cookie" style="width:40px;height:40px;"></i>
+                        </div>
+                        <div style="padding:28px;">
+                            <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Pastry</h3>
+                            <p class="body-sm">Croissant flaky, Cinnamon Roll hangat, dan kue-kue artisan yang dipanggang fresh setiap hari.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="overflow:hidden;">
+                        <div style="aspect-ratio:16/10; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel);">
+                            <i data-lucide="cake" style="width:40px;height:40px;"></i>
+                        </div>
+                        <div style="padding:28px;">
+                            <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Dessert</h3>
+                            <p class="body-sm">Tiramisu klasik Italia dengan espresso kami, Basque Burnt Cheesecake creamy, dan seasonal dessert.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coffee Experience -->
+        <section class="section">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+                    <div class="story-img" style="aspect-ratio:3/4;">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&h=1000&fit=crop&q=80" alt="Barista menyeduh kopi manual brew dengan teknik pour over">
+                        <div class="story-img-frame"></div>
+                    </div>
+                    <div>
+                        <div class="section-header left">
+                            <div class="section-tag">
+                                <div class="section-tag-line"></div>
+                                <span class="caption">Filosofi Kopi</span>
+                            </div>
+                            <h2 class="section-title heading-1">Dari Kebun ke Cangkir</h2>
+                        </div>
+                        <p class="body-lg" style="margin-bottom:24px;">
+                            Kami bekerja langsung dengan petani kopi di Gayo, Toraja, Flores, dan Bali untuk memastikan setiap biji yang kami gunakan adalah yang terbaik. Proses roasting kami dilakukan in-house setiap minggu untuk menjaga kesegaran maksimal.
+                        </p>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px;">
+                            <div style="padding:24px; background:var(--beige); border-radius:var(--radius-lg);">
+                                <div style="font-family:'Playfair Display', serif; font-size:2rem; font-weight:600; color:var(--caramel); margin-bottom:4px;">25+</div>
+                                <div style="font-size:0.875rem; color:var(--text-muted);">Varian Single Origin</div>
+                            </div>
+                            <div style="padding:24px; background:var(--beige); border-radius:var(--radius-lg);">
+                                <div style="font-family:'Playfair Display', serif; font-size:2rem; font-weight:600; color:var(--caramel); margin-bottom:4px;">Weekly</div>
+                                <div style="font-size:0.875rem; color:var(--text-muted);">Fresh Roasting</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline" onclick="navigateTo('beans'); return false;">
+                            Jelajahi Biji Kopi
+                            <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshop -->
+        <section class="section section-beige">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Belajar Bersama</span>
+                    </div>
+                    <h2 class="section-title heading-1">Coffee Workshop</h2>
+                    <p class="section-desc">Pelajari seni di balik secangkir kopi sempurna dari barista bersertifikat kami.</p>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:24px;">
+                    <div class="workshop-card">
+                        <div class="workshop-date">
+                            <i data-lucide="calendar" style="width:14px;height:14px;"></i>
+                            Setiap Sabtu, 10:00 - 12:00
+                        </div>
+                        <h3 class="workshop-title">Latte Art Fundamental</h3>
+                        <p class="workshop-desc">Pelajari dasar-dasar latte art: steaming, pouring, dan membuat hati, rosetta, dan tulip. Termasuk 2 cangkir praktik.</p>
+                        <div class="workshop-meta">
+                            <span><i data-lucide="users" style="width:14px;height:14px;"></i> 8 peserta</span>
+                            <span><i data-lucide="clock" style="width:14px;height:14px;"></i> 2 jam</span>
+                        </div>
+                        <div class="workshop-price">Rp 350.000</div>
+                        <a href="#" class="btn btn-primary" style="width:100%;" onclick="navigateTo('workshops'); return false;">Daftar Workshop</a>
+                    </div>
+                    <div class="workshop-card">
+                        <div class="workshop-date">
+                            <i data-lucide="calendar" style="width:14px;height:14px;"></i>
+                            Setiap Minggu, 13:00 - 15:00
+                        </div>
+                        <h3 class="workshop-title">Manual Brew Mastery</h3>
+                        <p class="workshop-desc">Kuasai V60, Aeropress, French Press, dan Chemex. Memahami grind size, ratio, dan teknik seduh.</p>
+                        <div class="workshop-meta">
+                            <span><i data-lucide="users" style="width:14px;height:14px;"></i> 6 peserta</span>
+                            <span><i data-lucide="clock" style="width:14px;height:14px;"></i> 2 jam</span>
+                        </div>
+                        <div class="workshop-price">Rp 400.000</div>
+                        <a href="#" class="btn btn-primary" style="width:100%;" onclick="navigateTo('workshops'); return false;">Daftar Workshop</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Pengalaman</span>
+                    </div>
+                    <h2 class="section-title heading-1">Mengapa Brew Haven?</h2>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
+                    <div style="text-align:center; padding:40px 24px;">
+                        <div style="width:64px; height:64px; background:var(--beige); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 20px;">
+                            <i data-lucide="bean" style="width:28px;height:28px;"></i>
+                        </div>
+                        <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Biji Kopi Premium</h3>
+                        <p class="body-sm">Single origin dari petani terpilih di seluruh Indonesia. Roasting in-house setiap minggu untuk kesegaran optimal.</p>
+                    </div>
+                    <div style="text-align:center; padding:40px 24px;">
+                        <div style="width:64px; height:64px; background:var(--beige); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 20px;">
+                            <i data-lucide="award" style="width:28px;height:28px;"></i>
+                        </div>
+                        <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Barista Bersertifikat</h3>
+                        <p class="body-sm">Tim barista kami bersertifikat SCA dengan pengalaman bertahun-tahun. Setiap cangkir diseduh dengan presisi.</p>
+                    </div>
+                    <div style="text-align:center; padding:40px 24px;">
+                        <div style="width:64px; height:64px; background:var(--beige); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 20px;">
+                            <i data-lucide="sofa" style="width:28px;height:28px;"></i>
+                        </div>
+                        <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Ruang Nyaman</h3>
+                        <p class="body-sm">Interior minimalis dengan pencahayaan hangat, tanaman hijau, dan furniture ergonomis. Tempat sempurna untuk bekerja atau bersantai.</p>
+                    </div>
+                    <div style="text-align:center; padding:40px 24px;">
+                        <div style="width:64px; height:64px; background:var(--beige); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 20px;">
+                            <i data-lucide="wifi" style="width:28px;height:28px;"></i>
+                        </div>
+                        <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Coworking Friendly</h3>
+                        <p class="body-sm">WiFi berkecepatan tinggi, power outlet di setiap meja, dan ruang meeting untuk 8 orang. Remote worker's paradise.</p>
+                    </div>
+                    <div style="text-align:center; padding:40px 24px;">
+                        <div style="width:64px; height:64px; background:var(--beige); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 20px;">
+                            <i data-lucide="camera" style="width:28px;height:28px;"></i>
+                        </div>
+                        <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Instagram-Worthy</h3>
+                        <p class="body-sm">Setiap sudut kafe dirancang dengan estetika visual. Natural lighting, wood textures, dan tanaman hijau menciptakan backdrop sempurna.</p>
+                    </div>
+                    <div style="text-align:center; padding:40px 24px;">
+                        <div style="width:64px; height:64px; background:var(--beige); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 20px;">
+                            <i data-lucide="heart-handshake" style="width:28px;height:28px;"></i>
+                        </div>
+                        <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Komunitas</h3>
+                        <p class="body-sm">Brew Haven adalah rumah bagi komunitas kreatif. Book club, acoustic night, dan coffee talk rutin kami selalu menarik.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Testimoni</span>
+                    </div>
+                    <h2 class="section-title heading-1">Apa Kata Mereka</h2>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                        </div>
+                        <p class="testimonial-text">"Brew Haven adalah tempat kerja favorit saya. WiFi cepat, kopi luar biasa, dan atmosfer yang begitu menginspirasi. Saya menghabiskan setidaknya 3 hari seminggu di sini."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RA</div>
+                            <div>
+                                <div class="testimonial-name">Rina Andriani</div>
+                                <div class="testimonial-title">Freelance Designer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                        </div>
+                        <p class="testimonial-text">"Meeting dengan investor pertama kami dilakukan di Brew Haven. Suasana yang profesional namun santai sangat membantu. Kopi signature mereka juga luar biasa."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">BH</div>
+                            <div>
+                                <div class="testimonial-name">Budi Hartono</div>
+                                <div class="testimonial-title">Founder, TechStart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                            <i data-lucide="star" style="width:16px;height:16px; fill:currentColor;"></i>
+                        </div>
+                        <p class="testimonial-text">"Interior Brew Haven sangat Instagram-worthy! Tapi yang lebih penting, kualitas kopinya konsisten setiap kali saya datang. Latte art-nya selalu memukau."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SN</div>
+                            <div>
+                                <div class="testimonial-name">Siti Nurhaliza</div>
+                                <div class="testimonial-title">Content Creator</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Galeri</span>
+                    </div>
+                    <h2 class="section-title heading-1">Momen di Brew Haven</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&h=800&fit=crop&q=80" alt="Interior kafe dengan pencahayaan hangat dan tanaman">
+                        <div class="gallery-item-overlay"><i data-lucide="maximize-2" style="width:24px;height:24px; color:var(--beige);"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=400&h=400&fit=crop&q=80" alt="Latte art yang indah di atas cangkir kopi">
+                        <div class="gallery-item-overlay"><i data-lucide="maximize-2" style="width:24px;height:24px; color:var(--beige);"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&h=400&fit=crop&q=80" alt="Barista menyeduh kopi dengan teknik pour over">
+                        <div class="gallery-item-overlay"><i data-lucide="maximize-2" style="width:24px;height:24px; color:var(--beige);"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=400&h=400&fit=crop&q=80" alt="Pastry dan kopi di meja kayu">
+                        <div class="gallery-item-overlay"><i data-lucide="maximize-2" style="width:24px;height:24px; color:var(--beige);"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=400&h=400&fit=crop&q=80" alt="Orang bekerja di kafe dengan laptop">
+                        <div class="gallery-item-overlay"><i data-lucide="maximize-2" style="width:24px;height:24px; color:var(--beige);"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section class="section section-beige">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+                    <div>
+                        <div class="section-header left">
+                            <div class="section-tag">
+                                <div class="section-tag-line"></div>
+                                <span class="caption">Lokasi</span>
+                            </div>
+                            <h2 class="section-title heading-1">Temukan Kami</h2>
+                        </div>
+                        <div class="contact-info-card" style="margin-bottom:0;">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i data-lucide="map-pin" style="width:18px;height:18px;"></i></div>
+                                <div class="contact-info-text">
+                                    <h4>Alamat</h4>
+                                    <p>Jl. Braga No. 45, Braga, Kec. Sumur Bandung, Bandung 40111</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i data-lucide="clock" style="width:18px;height:18px;"></i></div>
+                                <div class="contact-info-text">
+                                    <h4>Jam Operasional</h4>
+                                    <p>Senin-Jumat: 07:00 - 22:00<br>Sabtu-Minggu: 08:00 - 23:00</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i data-lucide="car" style="width:18px;height:18px;"></i></div>
+                                <div class="contact-info-text">
+                                    <h4>Parkir</h4>
+                                    <p>Parkir motor tersedia di depan kafe. Parkir mobil di area Braga Walk (5 menit jalan kaki).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-placeholder">
+                        <i data-lucide="map" style="width:48px;height:48px; margin-bottom:12px;"></i>
+                        <span>Google Maps Placeholder</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="section">
+            <div class="cta-banner">
+                <div class="cta-banner-content">
+                    <h2 class="cta-banner-title">Reservasi Meja Anda</h2>
+                    <p class="cta-banner-desc">Jangan biarkan momen sempurna berlalu begitu saja. Pesan meja Anda sekarang dan biarkan kami menyambut Anda dengan secangkir kopi terbaik.</p>
+                    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+                        <a href="#" class="btn btn-caramel" onclick="navigateTo('reservation'); return false;">
+                            <i data-lucide="calendar" style="width:18px;height:18px;"></i>
+                            Reservasi Sekarang
+                        </a>
+                        <a href="#" class="btn btn-outline-light" onclick="navigateTo('contact'); return false;">
+                            <i data-lucide="phone" style="width:18px;height:18px;"></i>
+                            Hubungi Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div class="page" id="page-about">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Tentang Kami</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Cerita di Balik Setiap Cangkir</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Dari mimpi sederhana tentang kopi yang sempurna hingga menjadi rumah bagi ribuan pecinta kopi di Bandung.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="story-grid">
+                    <div>
+                        <div class="section-header left">
+                            <div class="section-tag">
+                                <div class="section-tag-line"></div>
+                                <span class="caption">Perjalanan Kami</span>
+                            </div>
+                            <h2 class="section-title heading-1">Dimulai dari Passion</h2>
+                        </div>
+                        <p class="body-lg" style="margin-bottom:20px;">
+                            Tahun 2018, Andi Wijaya—seorang barista muda dengan mimpi besar—membuka pintu kecil di Jalan Braga dengan satu espresso machine dan keyakinan bahwa Bandung pantas mendapatkan kopi yang lebih baik.
+                        </p>
+                        <p class="body-lg" style="margin-bottom:20px;">
+                            Tanpa modal besar, tanpa investor, hanya dengan passion untuk kopi dan komitmen terhadap kualitas. Setiap pagi, Andi memanggang biji kopi sendiri, menyeduh setiap cangkir dengan cermat, dan berbicara dengan setiap pelanggan seolah mereka adalah tamu di rumahnya sendiri.
+                        </p>
+                        <p class="body-lg">
+                            Enam tahun kemudian, Brew Haven telah berkembang menjadi komunitas. Kami tidak lagi hanya menjual kopi—kami menjual momen, kenangan, dan ruang bagi orang-orang untuk menjadi versi terbaik dari diri mereka.
+                        </p>
+                    </div>
+                    <div class="story-img">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=1000&fit=crop&q=80" alt="Interior Brew Haven saat golden hour">
+                        <div class="story-img-frame"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-beige">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-bottom:80px;">
+                    <div class="card" style="padding:48px;">
+                        <div style="width:56px; height:56px; background:var(--beige); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; color:var(--caramel); margin-bottom:24px;">
+                            <i data-lucide="eye" style="width:24px;height:24px;"></i>
+                        </div>
+                        <h3 class="font-serif" style="font-size:1.5rem; font-weight:600; margin-bottom:16px; color:var(--espresso);">Visi</h3>
+                        <p class="body-lg">Menjadi ruang kopi specialty terdepan di Indonesia yang menginspirasi komunitas melalui kualitas, kreativitas, dan kehangatan.</p>
+                    </div>
+                    <div class="card" style="padding:48px;">
+                        <div style="width:56px; height:56px; background:var(--beige); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; color:var(--caramel); margin-bottom:24px;">
+                            <i data-lucide="target" style="width:24px;height:24px;"></i>
+                        </div>
+                        <h3 class="font-serif" style="font-size:1.5rem; font-weight:600; margin-bottom:16px; color:var(--espresso);">Misi</h3>
+                        <ul style="list-style:none; padding:0;">
+                            <li style="margin-bottom:12px; display:flex; gap:12px; color:var(--text-secondary);"><span style="color:var(--caramel); font-weight:700;">01</span> Menyajikan kopi specialty berkualitas premium dengan standar internasional</li>
+                            <li style="margin-bottom:12px; display:flex; gap:12px; color:var(--text-secondary);"><span style="color:var(--caramel); font-weight:700;">02</span> Menciptakan ruang yang nyaman dan menginspirasi untuk komunitas</li>
+                            <li style="margin-bottom:12px; display:flex; gap:12px; color:var(--text-secondary);"><span style="color:var(--caramel); font-weight:700;">03</span> Mendukung petani kopi lokal melalui sourcing yang adil dan berkelanjutan</li>
+                            <li style="display:flex; gap:12px; color:var(--text-secondary);"><span style="color:var(--caramel); font-weight:700;">04</span> Mengedukasi masyarakat tentang seni dan ilmu di balik secangkir kopi</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section-header" style="margin-bottom:48px;">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Nilai-Nilai</span>
+                    </div>
+                    <h2 class="section-title heading-1">Fondasi Kami</h2>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:20px;">
+                    <div style="padding:32px 24px; background:var(--warm-white); border-radius:var(--radius-lg); border:1px solid var(--border); text-align:center;">
+                        <div style="width:48px; height:48px; background:var(--beige); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 16px;">
+                            <i data-lucide="gem" style="width:20px;height:20px;"></i>
+                        </div>
+                        <h4 style="font-weight:600; font-size:1rem; margin-bottom:8px; color:var(--espresso);">Kualitas</h4>
+                        <p style="font-size:0.8125rem; color:var(--text-muted); line-height:1.5;">Kami tidak pernah mengorbankan kualitas. Setiap detail diperhatikan.</p>
+                    </div>
+                    <div style="padding:32px 24px; background:var(--warm-white); border-radius:var(--radius-lg); border:1px solid var(--border); text-align:center;">
+                        <div style="width:48px; height:48px; background:var(--beige); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 16px;">
+                            <i data-lucide="fingerprint" style="width:20px;height:20px;"></i>
+                        </div>
+                        <h4 style="font-weight:600; font-size:1rem; margin-bottom:8px; color:var(--espresso);">Keautentikan</h4>
+                        <p style="font-size:0.8125rem; color:var(--text-muted); line-height:1.5;">Setia pada akar kopi dan proses tradisional, sambil terus berinovasi.</p>
+                    </div>
+                    <div style="padding:32px 24px; background:var(--warm-white); border-radius:var(--radius-lg); border:1px solid var(--border); text-align:center;">
+                        <div style="width:48px; height:48px; background:var(--beige); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 16px;">
+                            <i data-lucide="users" style="width:20px;height:20px;"></i>
+                        </div>
+                        <h4 style="font-weight:600; font-size:1rem; margin-bottom:8px; color:var(--espresso);">Komunitas</h4>
+                        <p style="font-size:0.8125rem; color:var(--text-muted); line-height:1.5;">Kafe kami adalah rumah bagi setiap orang yang mencari koneksi.</p>
+                    </div>
+                    <div style="padding:32px 24px; background:var(--warm-white); border-radius:var(--radius-lg); border:1px solid var(--border); text-align:center;">
+                        <div style="width:48px; height:48px; background:var(--beige); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 16px;">
+                            <i data-lucide="leaf" style="width:20px;height:20px;"></i>
+                        </div>
+                        <h4 style="font-weight:600; font-size:1rem; margin-bottom:8px; color:var(--espresso);">Keberlanjutan</h4>
+                        <p style="font-size:0.8125rem; color:var(--text-muted); line-height:1.5;">Praktik ramah lingkungan dan sourcing yang bertanggung jawab.</p>
+                    </div>
+                    <div style="padding:32px 24px; background:var(--warm-white); border-radius:var(--radius-lg); border:1px solid var(--border); text-align:center;">
+                        <div style="width:48px; height:48px; background:var(--beige); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 16px;">
+                            <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
+                        </div>
+                        <h4 style="font-weight:600; font-size:1rem; margin-bottom:8px; color:var(--espresso);">Kreativitas</h4>
+                        <p style="font-size:0.8125rem; color:var(--text-muted); line-height:1.5;">Kopi adalah kanvas untuk ekspresi dan eksplorasi tanpa batas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Tim Kami</span>
+                    </div>
+                    <h2 class="section-title heading-1">Orang-Orang di Balik Kopi</h2>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <div class="team-img-placeholder">AW</div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Andi Wijaya</h3>
+                            <div class="team-title">Head Barista & Co-Founder</div>
+                            <p class="team-desc">SCA certified barista dengan 8 tahun pengalaman. Finalis Indonesia Barista Championship 2022.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-img">
+                            <div class="team-img-placeholder">MS</div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Maya Sari</h3>
+                            <div class="team-title">Head of Roasting</div>
+                            <p class="team-desc">Roaster berpengalaman yang telah mengembangkan profil roasting unik untuk setiap origin kami.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-img">
+                            <div class="team-img-placeholder">RH</div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Rudi Hartono</h3>
+                            <div class="team-title">Pastry Chef</div>
+                            <p class="team-desc">Lulusan Le Cordon Bleu Paris. Spesialisasi dalam pastry Prancis dan dessert kafe.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-img">
+                            <div class="team-img-placeholder">LK</div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Lina Kusuma</h3>
+                            <div class="team-title">Cafe Manager</div>
+                            <p class="team-desc">Mengelola operasional harian dengan fokus pada pengalaman pelanggan dan kualitas layanan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-beige">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div>
+                        <span class="caption">Keberlanjutan</span>
+                    </div>
+                    <h2 class="section-title heading-1">Komunitas & Lingkungan</h2>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+                    <div>
+                        <p class="body-lg" style="margin-bottom:20px;">
+                            Kami percaya bahwa bisnis yang baik adalah bisnis yang memberi kembali. Setiap bulan, 2% dari penjualan biji kopi kami disalurkan ke program pendidikan petani kopi di daerah asal.
+                        </p>
+                        <p class="body-lg" style="margin-bottom:20px;">
+                            Kemasan kami 100% biodegradable. Sedotan dari bambu, cup dari kertas daur ulang, dan take-away bag dari bahan organik. Kami juga menerima cup bekas untuk didaur ulang.
+                        </p>
+                        <p class="body-lg">
+                            Komunitas Brew Haven aktif mengadakan event bulanan: dari book club hingga acoustic night, dari coffee talk dengan petani hingga charity bake sale.
+                        </p>
+                    </div>
+                    <div class="story-img" style="aspect-ratio:4/3;">
+                        <img src="https://images.unsplash.com/photo-1442512595367-42736f3e576f?w=800&h=600&fit=crop&q=80" alt="Komunitas Brew Haven dalam sesi coffee cupping">
+                        <div class="story-img-frame"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MENU PAGE -->
+    <div class="page" id="page-menu">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Menu</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Sajian Brew Haven</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Setiap hidangan disiapkan dengan bahan segar, disajikan dengan cinta, dan dirancang untuk memanjakan selera Anda.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section section-cream">
+            <div class="container">
+                <div class="menu-tabs">
+                    <button class="menu-tab active" onclick="switchMenuTab('coffee', this)">Kopi</button>
+                    <button class="menu-tab" onclick="switchMenuTab('signature', this)">Signature</button>
+                    <button class="menu-tab" onclick="switchMenuTab('noncoffee', this)">Non-Kopi</button>
+                    <button class="menu-tab" onclick="switchMenuTab('food', this)">Makanan</button>
+                </div>
+                <div class="menu-grid" id="menuCoffee">
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="coffee" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Haven Espresso</span>
+                                <span class="menu-item-price">Rp 28.000</span>
+                            </div>
+                            <p class="menu-item-desc">Double shot espresso dengan crema golden yang kaya. Intens, bold, dan memiliki aftertaste cokelat gelap.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="coffee" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Caramel Macchiato</span>
+                                <span class="menu-item-price">Rp 38.000</span>
+                            </div>
+                            <p class="menu-item-desc">Espresso dengan steamed milk dan sirup karamel buatan sendiri, dihiasi dengan latte art.</p>
+                            <span class="menu-item-tag">Popular</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="coffee" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Flat White</span>
+                                <span class="menu-item-price">Rp 35.000</span>
+                            </div>
+                            <p class="menu-item-desc">Double ristretto dengan microfoam susu yang halus. Rasio kopi-ke-susu yang sempurna.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="coffee" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Cold Brew</span>
+                                <span class="menu-item-price">Rp 32.000</span>
+                            </div>
+                            <p class="menu-item-desc">Kopi Arabika Gayo yang diseduh dingin selama 18 jam. Smooth, low acidity, dengan notes berry.</p>
+                            <span class="menu-item-tag">Best Seller</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="coffee" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">V60 Pour Over</span>
+                                <span class="menu-item-price">Rp 42.000</span>
+                            </div>
+                            <p class="menu-item-desc">Single origin pilihan hari ini, diseduh manual dengan V60. Menyajikan karakter unik setiap biji.</p>
+                            <span class="menu-item-tag">Manual Brew</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="coffee" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Aeropress</span>
+                                <span class="menu-item-price">Rp 40.000</span>
+                            </div>
+                            <p class="menu-item-desc">Metode seduh full immersion dengan tekanan. Body yang kaya dengan clarity rasa yang tinggi.</p>
+                            <span class="menu-item-tag">Manual Brew</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="coffee" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Haven Latte</span>
+                                <span class="menu-item-price">Rp 36.000</span>
+                            </div>
+                            <p class="menu-item-desc">Espresso dengan steamed milk dan microfoam tipis. Pilihan susu: full cream, oat, atau almond.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="coffee" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Mocha</span>
+                                <span class="menu-item-price">Rp 40.000</span>
+                            </div>
+                            <p class="menu-item-desc">Espresso dengan cokelat Belgium dan steamed milk. Topping whipped cream dan cocoa powder.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-grid" id="menuSignature" style="display:none;">
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="sparkles" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Haven Affogato</span>
+                                <span class="menu-item-price">Rp 45.000</span>
+                            </div>
+                            <p class="menu-item-desc">Double shot espresso dituang di atas gelato vanilla buatan sendiri. Panas bertemu dingin dalam harmoni sempurna.</p>
+                            <span class="menu-item-tag">Signature</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="sparkles" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Coconut Cold Brew</span>
+                                <span class="menu-item-price">Rp 42.000</span>
+                            </div>
+                            <p class="menu-item-desc">Cold brew dengan fresh coconut water dan coconut cream. Tropical twist yang menyegarkan.</p>
+                            <span class="menu-item-tag">Seasonal</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="sparkles" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Spiced Orange Mocha</span>
+                                <span class="menu-item-price">Rp 44.000</span>
+                            </div>
+                            <p class="menu-item-desc">Mocha dengan infused jeruk dan rempah-rempah hangat. Hanya tersedia selama musim dingin.</p>
+                            <span class="menu-item-tag">Seasonal</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="sparkles" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Espresso Tonic</span>
+                                <span class="menu-item-price">Rp 38.000</span>
+                            </div>
+                            <p class="menu-item-desc">Double shot espresso dengan tonic water dan slice jeruk. Refreshing, bubbly, dan unik.</p>
+                            <span class="menu-item-tag">Signature</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-grid" id="menuNoncoffee" style="display:none;">
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="leaf" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Matcha Latte</span>
+                                <span class="menu-item-price">Rp 38.000</span>
+                            </div>
+                            <p class="menu-item-desc">Matcha premium dari Uji, Jepang, dengan steamed milk. Umami yang seimbang.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="leaf" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Chocolate</span>
+                                <span class="menu-item-price">Rp 36.000</span>
+                            </div>
+                            <p class="menu-item-desc">Cokelat Belgium 70% dengan steamed milk. Pilihan: dark, milk, atau white chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="leaf" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Kombucha</span>
+                                <span class="menu-item-price">Rp 32.000</span>
+                            </div>
+                            <p class="menu-item-desc">Fermented tea buatan sendiri. Pilihan rasa: original, ginger, atau passion fruit.</p>
+                            <span class="menu-item-tag">Healthy</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="leaf" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Fresh Lemonade</span>
+                                <span class="menu-item-price">Rp 28.000</span>
+                            </div>
+                            <p class="menu-item-desc">Lemon segar dengan madu lokal dan mint. Segar dan menyegarkan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-grid" id="menuFood" style="display:none;">
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="utensils" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Avocado Toast</span>
+                                <span class="menu-item-price">Rp 52.000</span>
+                            </div>
+                            <p class="menu-item-desc">Roti sourdough panggang dengan alpukat segar, poached egg, dan chili flakes.</p>
+                            <span class="menu-item-tag">Breakfast</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="utensils" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Eggs Benedict</span>
+                                <span class="menu-item-price">Rp 58.000</span>
+                            </div>
+                            <p class="menu-item-desc">English muffin, smoked beef, poached egg, dan hollandaise sauce buatan sendiri.</p>
+                            <span class="menu-item-tag">Breakfast</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="utensils" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Croissant</span>
+                                <span class="menu-item-price">Rp 28.000</span>
+                            </div>
+                            <p class="menu-item-desc">Croissant butter Prancis autentik. Flaky, buttery, dan fresh dari oven setiap pagi.</p>
+                            <span class="menu-item-tag">Pastry</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="utensils" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Cinnamon Roll</span>
+                                <span class="menu-item-price">Rp 32.000</span>
+                            </div>
+                            <p class="menu-item-desc">Roll kayu manis dengan cream cheese frosting. Hangat, lembut, dan menggugah selera.</p>
+                            <span class="menu-item-tag">Pastry</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="utensils" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Tiramisu</span>
+                                <span class="menu-item-price">Rp 45.000</span>
+                            </div>
+                            <p class="menu-item-desc">Dessert klasik Italia dengan espresso kami, mascarpone, dan ladyfinger.</p>
+                            <span class="menu-item-tag">Dessert</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-img"><i data-lucide="utensils" style="width:32px;height:32px;"></i></div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <span class="menu-item-name">Basque Burnt Cheesecake</span>
+                                <span class="menu-item-price">Rp 48.000</span>
+                            </div>
+                            <p class="menu-item-desc">Cheesecake gaya San Sebastian dengan crust caramelized. Creamy dan rich.</p>
+                            <span class="menu-item-tag">Dessert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BEANS PAGE -->
+    <div class="page" id="page-beans">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Biji Kopi</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Single Origin Indonesia</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Biji kopi pilihan dari petani terbaik di seluruh Indonesia. Di-roast fresh setiap minggu di fasilitas kami.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;">
+                    <div class="bean-card">
+                        <div class="bean-origin">Aceh</div>
+                        <h3 class="bean-name">Gayo Highland</h3>
+                        <div class="bean-process">Wet Hulled</div>
+                        <div class="bean-roast"><i data-lucide="flame" style="width:14px;height:14px;"></i> Medium Roast</div>
+                        <p class="bean-notes">Dark Chocolate, Cedar, Herbal</p>
+                        <div class="bean-price">Rp 85.000</div>
+                        <div class="bean-weight">/ 250g</div>
+                    </div>
+                    <div class="bean-card">
+                        <div class="bean-origin">Sulawesi Selatan</div>
+                        <h3 class="bean-name">Toraja Sapan</h3>
+                        <div class="bean-process">Semi Washed</div>
+                        <div class="bean-roast"><i data-lucide="flame" style="width:14px;height:14px;"></i> Medium-Dark Roast</div>
+                        <p class="bean-notes">Caramel, Tobacco, Spicy</p>
+                        <div class="bean-price">Rp 95.000</div>
+                        <div class="bean-weight">/ 250g</div>
+                    </div>
+                    <div class="bean-card">
+                        <div class="bean-origin">NTT</div>
+                        <h3 class="bean-name">Flores Bajawa</h3>
+                        <div class="bean-process">Natural</div>
+                        <div class="bean-roast"><i data-lucide="flame" style="width:14px;height:14px;"></i> Light Roast</div>
+                        <p class="bean-notes">Berry, Floral, Citrus</p>
+                        <div class="bean-price">Rp 90.000</div>
+                        <div class="bean-weight">/ 250g</div>
+                    </div>
+                    <div class="bean-card">
+                        <div class="bean-origin">Jawa Barat</div>
+                        <h3 class="bean-name">Java Preanger</h3>
+                        <div class="bean-process">Washed</div>
+                        <div class="bean-roast"><i data-lucide="flame" style="width:14px;height:14px;"></i> Medium Roast</div>
+                        <p class="bean-notes">Nutty, Brown Sugar, Tea-like</p>
+                        <div class="bean-price">Rp 80.000</div>
+                        <div class="bean-weight">/ 250g</div>
+                    </div>
+                    <div class="bean-card">
+                        <div class="bean-origin">Bali</div>
+                        <h3 class="bean-name">Bali Kintamani</h3>
+                        <div class="bean-process">Natural</div>
+                        <div class="bean-roast"><i data-lucide="flame" style="width:14px;height:14px;"></i> Light-Medium Roast</div>
+                        <p class="bean-notes">Tropical Fruit, Honey, Vanilla</p>
+                        <div class="bean-price">Rp 92.000</div>
+                        <div class="bean-weight">/ 250g</div>
+                    </div>
+                    <div class="bean-card">
+                        <div class="bean-origin">Papua</div>
+                        <h3 class="bean-name">Papua Wamena</h3>
+                        <div class="bean-process">Washed</div>
+                        <div class="bean-roast"><i data-lucide="flame" style="width:14px;height:14px;"></i> Medium Roast</div>
+                        <p class="bean-notes">Cocoa, Red Fruit, Syrupy</p>
+                        <div class="bean-price">Rp 105.000</div>
+                        <div class="bean-weight">/ 250g</div>
+                    </div>
+                </div>
+                <div style="margin-top:48px; padding:40px; background:var(--beige); border-radius:var(--radius-xl); text-align:center;">
+                    <div style="width:64px; height:64px; background:var(--warm-white); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 20px;">
+                        <i data-lucide="coffee" style="width:28px;height:28px;"></i>
+                    </div>
+                    <h3 class="font-serif" style="font-size:1.5rem; font-weight:600; margin-bottom:12px; color:var(--espresso);">Grinding Service Gratis</h3>
+                    <p style="color:var(--text-muted); max-width:500px; margin:0 auto;">Beli biji kopi dan kami akan menggilingnya sesuai metode seduh Anda—espresso, V60, French Press, atau Aeropress.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- WORKSHOPS PAGE -->
+    <div class="page" id="page-workshops">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Workshop</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Pelajari Seni Kopi</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Dari latte art hingga manual brew, pelajari teknik-teknik kopi dari barista bersertifikat kami.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:32px;">
+                    <div class="workshop-card">
+                        <div class="workshop-date"><i data-lucide="calendar" style="width:14px;height:14px;"></i> Setiap Sabtu, 10:00 - 12:00</div>
+                        <h3 class="workshop-title">Latte Art Fundamental</h3>
+                        <p class="workshop-desc">Pelajari dasar-dasar latte art: steaming, pouring, dan membuat hati, rosetta, dan tulip. Termasuk 2 cangkir praktik dengan espresso dan susu premium.</p>
+                        <div class="workshop-meta">
+                            <span><i data-lucide="users" style="width:14px;height:14px;"></i> 8 peserta</span>
+                            <span><i data-lucide="clock" style="width:14px;height:14px;"></i> 2 jam</span>
+                        </div>
+                        <div class="workshop-price">Rp 350.000</div>
+                        <a href="#" class="btn btn-primary" style="width:100%;" onclick="navigateTo('contact'); return false;">Daftar Sekarang</a>
+                    </div>
+                    <div class="workshop-card">
+                        <div class="workshop-date"><i data-lucide="calendar" style="width:14px;height:14px;"></i> Setiap Minggu, 13:00 - 15:00</div>
+                        <h3 class="workshop-title">Manual Brew Mastery</h3>
+                        <p class="workshop-desc">Kuasai V60, Aeropress, French Press, dan Chemex. Memahami grind size, water ratio, temperature, dan teknik seduh untuk setiap metode.</p>
+                        <div class="workshop-meta">
+                            <span><i data-lucide="users" style="width:14px;height:14px;"></i> 6 peserta</span>
+                            <span><i data-lucide="clock" style="width:14px;height:14px;"></i> 2 jam</span>
+                        </div>
+                        <div class="workshop-price">Rp 400.000</div>
+                        <a href="#" class="btn btn-primary" style="width:100%;" onclick="navigateTo('contact'); return false;">Daftar Sekarang</a>
+                    </div>
+                    <div class="workshop-card">
+                        <div class="workshop-date"><i data-lucide="calendar" style="width:14px;height:14px;"></i> Minggu pertama setiap bulan, 14:00 - 16:00</div>
+                        <h3 class="workshop-title">Coffee Cupping</h3>
+                        <p class="workshop-desc">Eksplorasi 6 single origin Indonesia. Belajar mendeteksi flavor notes, acidity, body, dan aftertaste seperti professional Q Grader.</p>
+                        <div class="workshop-meta">
+                            <span><i data-lucide="users" style="width:14px;height:14px;"></i> 10 peserta</span>
+                            <span><i data-lucide="clock" style="width:14px;height:14px;"></i> 2 jam</span>
+                        </div>
+                        <div class="workshop-price">Rp 250.000</div>
+                        <a href="#" class="btn btn-primary" style="width:100%;" onclick="navigateTo('contact'); return false;">Daftar Sekarang</a>
+                    </div>
+                    <div class="workshop-card">
+                        <div class="workshop-date"><i data-lucide="calendar" style="width:14px;height:14px;"></i> Setiap Rabu, 18:00 - 20:30</div>
+                        <h3 class="workshop-title">Home Barista</h3>
+                        <p class="workshop-desc">Pelatihan lengkap untuk membuat kopi kafe-quality di rumah. Termasuk tips perawatan equipment dan rekomendasi alat seduh untuk setiap budget.</p>
+                        <div class="workshop-meta">
+                            <span><i data-lucide="users" style="width:14px;height:14px;"></i> 5 peserta</span>
+                            <span><i data-lucide="clock" style="width:14px;height:14px;"></i> 2.5 jam</span>
+                        </div>
+                        <div class="workshop-price">Rp 500.000</div>
+                        <a href="#" class="btn btn-primary" style="width:100%;" onclick="navigateTo('contact'); return false;">Daftar Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- EVENTS PAGE -->
+    <div class="page" id="page-events">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Event</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Komunitas & Acara</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Brew Haven bukan sekadar kafe. Ia adalah ruang bagi komunitas untuk bertemu, berbagi, dan tumbuh bersama.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:24px;">
+                    <div class="event-card">
+                        <div class="event-date"><i data-lucide="calendar" style="width:14px;height:14px;"></i> Setiap Jumat, 19:00</div>
+                        <h3 class="event-title">Live Acoustic Night</h3>
+                        <p class="event-desc">Nikmati kopi sambil mendengarkan musik akustik dari musisi lokal Bandung. Suasana intim dengan pencahayaan lilin dan aroma kopi.</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date"><i data-lucide="calendar" style="width:14px;height:14px;"></i> Minggu ke-2 setiap bulan, 15:00</div>
+                        <h3 class="event-title">Coffee & Book Club</h3>
+                        <p class="event-desc">Diskusi buku dengan tema baru setiap bulan, disertai complimentary coffee tasting dari single origin pilihan.</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date"><i data-lucide="calendar" style="width:14px;height:14px;"></i> Kuartalan</div>
+                        <h3 class="event-title">Latte Art Competition</h3>
+                        <p class="event-desc">Kompetisi latte art terbuka untuk barista profesional dan amatir dengan hadiah menarik dan juri dari industri kopi.</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date"><i data-lucide="calendar" style="width:14px;height:14px;"></i> Bulanan</div>
+                        <h3 class="event-title">Farm to Cup Talk</h3>
+                        <p class="event-desc">Cerita langsung dari petani kopi kami tentang perjalanan biji kopi dari kebun ke cangkir Anda. Termasuk cupping session.</p>
+                    </div>
+                </div>
+                <div style="margin-top:48px; padding:48px; background:var(--beige); border-radius:var(--radius-xl); text-align:center;">
+                    <div style="width:64px; height:64px; background:var(--warm-white); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--caramel); margin:0 auto 20px;">
+                        <i data-lucide="megaphone" style="width:28px;height:28px;"></i>
+                    </div>
+                    <h3 class="font-serif" style="font-size:1.5rem; font-weight:600; margin-bottom:12px; color:var(--espresso);">Ingin Mengadakan Event di Brew Haven?</h3>
+                    <p style="color:var(--text-muted); max-width:500px; margin:0 auto 24px;">Kami menyediakan ruang untuk private gathering, product launch, workshop, atau celebration. Kapasitas hingga 40 orang.</p>
+                    <a href="#" class="btn btn-primary" onclick="navigateTo('contact'); return false;">Diskusikan Event Anda</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MERCHANDISE PAGE -->
+    <div class="page" id="page-merchandise">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Merchandise</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Bawa Brew Haven Pulang</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Koleksi merchandise yang dirancang dengan cermat untuk pecinta kopi sejati.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;">
+                    <div class="merch-card">
+                        <div class="merch-img"><div class="merch-img-placeholder"><i data-lucide="cup-soda" style="width:40px;height:40px;"></i></div></div>
+                        <div class="merch-info">
+                            <h3 class="merch-name">Haven Ceramic Tumbler</h3>
+                            <p class="merch-desc">Tumbler keramik 350ml dengan desain minimalis Brew Haven. Tahan panas dan dingin.</p>
+                            <div class="merch-price">Rp 185.000</div>
+                        </div>
+                    </div>
+                    <div class="merch-card">
+                        <div class="merch-img"><div class="merch-img-placeholder"><i data-lucide="filter" style="width:40px;height:40px;"></i></div></div>
+                        <div class="merch-info">
+                            <h3 class="merch-name">V60 Dripper Set</h3>
+                            <p class="merch-desc">Set lengkap V60 02 dengan filter paper 40 lembar, kettle 600ml, dan digital scale.</p>
+                            <div class="merch-price">Rp 320.000</div>
+                        </div>
+                    </div>
+                    <div class="merch-card">
+                        <div class="merch-img"><div class="merch-img-placeholder"><i data-lucide="shopping-bag" style="width:40px;height:40px;"></i></div></div>
+                        <div class="merch-info">
+                            <h3 class="merch-name">Brew Haven Tote Bag</h3>
+                            <p class="merch-desc">Tote bag kanvas premium dengan print logo Brew Haven. Kuat dan stylish untuk everyday use.</p>
+                            <div class="merch-price">Rp 120.000</div>
+                        </div>
+                    </div>
+                    <div class="merch-card">
+                        <div class="merch-img"><div class="merch-img-placeholder"><i data-lucide="flask-conical" style="width:40px;height:40px;"></i></div></div>
+                        <div class="merch-info">
+                            <h3 class="merch-name">Aeropress Go</h3>
+                            <p class="merch-desc">Aeropress versi travel-friendly. Sempurna untuk kopi kafe-quality di mana saja.</p>
+                            <div class="merch-price">Rp 650.000</div>
+                        </div>
+                    </div>
+                    <div class="merch-card">
+                        <div class="merch-img"><div class="merch-img-placeholder"><i data-lucide="shirt" style="width:40px;height:40px;"></i></div></div>
+                        <div class="merch-info">
+                            <h3 class="merch-name">Haven Crewneck</h3>
+                            <p class="merch-desc">Sweater crewneck dengan logo Brew Haven bordir. Nyaman dan stylish.</p>
+                            <div class="merch-price">Rp 280.000</div>
+                        </div>
+                    </div>
+                    <div class="merch-card">
+                        <div class="merch-img"><div class="merch-img-placeholder"><i data-lucide="gift" style="width:40px;height:40px;"></i></div></div>
+                        <div class="merch-info">
+                            <h3 class="merch-name">Gift Card</h3>
+                            <p class="merch-desc">Kartu hadiah digital atau fisik untuk orang terkasih. Berlaku untuk semua menu dan merchandise.</p>
+                            <div class="merch-price">Rp 100.000 - 500.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- RESERVATION PAGE -->
+    <div class="page" id="page-reservation">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Reservasi</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Pesan Meja Anda</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Reservasi direkomendasikan untuk grup, private meeting room, atau saat weekend. Walk-in selalu welcome!</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="reservation-form">
+                    <form onsubmit="event.preventDefault(); alert('Terima kasih! Reservasi Anda telah diterima. Konfirmasi akan dikirim via WhatsApp dalam 15 menit.');">
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                            <div class="form-group">
+                                <label class="form-label">Nama Lengkap *</label>
+                                <input type="text" class="form-input" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Nomor Telepon / WhatsApp *</label>
+                                <input type="tel" class="form-input" placeholder="+62 8xx-xxxx-xxxx" required>
+                            </div>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                            <div class="form-group">
+                                <label class="form-label">Tanggal *</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Waktu *</label>
+                                <select class="form-select" required>
+                                    <option value="">Pilih waktu</option>
+                                    <option value="07:00">07:00</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="21:00">21:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                            <div class="form-group">
+                                <label class="form-label">Jumlah Tamu *</label>
+                                <select class="form-select" required>
+                                    <option value="">Pilih jumlah tamu</option>
+                                    <option value="1">1 orang</option>
+                                    <option value="2">2 orang</option>
+                                    <option value="3">3 orang</option>
+                                    <option value="4">4 orang</option>
+                                    <option value="5">5 orang</option>
+                                    <option value="6">6 orang</option>
+                                    <option value="7">7 orang</option>
+                                    <option value="8">8 orang</option>
+                                    <option value="9+">9+ orang (grup)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Jenis Meja</label>
+                                <select class="form-select">
+                                    <option value="">Pilih jenis meja</option>
+                                    <option value="regular">Meja Reguler</option>
+                                    <option value="window">Meja Dekat Jendela</option>
+                                    <option value="sofa">Sofa Corner</option>
+                                    <option value="meeting">Private Meeting Room</option>
+                                    <option value="outdoor">Outdoor Seating</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Catatan Khusus</label>
+                            <textarea class="form-textarea" placeholder="Alergi, permintaan khusus, atau occasion (ulang tahun, anniversary, dll)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;">
+                            <i data-lucide="calendar-check" style="width:18px;height:18px;"></i>
+                            Konfirmasi Reservasi
+                        </button>
+                    </form>
+                </div>
+                <div style="margin-top:48px; padding:32px; background:var(--beige); border-radius:var(--radius-lg);">
+                    <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:16px; color:var(--espresso);">Kebijakan Reservasi</h3>
+                    <ul style="color:var(--text-muted); line-height:1.8; font-size:0.9375rem; padding-left:20px;">
+                        <li>Reservasi dapat dibatalkan maksimal 2 jam sebelum waktu yang ditentukan.</li>
+                        <li>Meja akan disimpan selama 15 menit dari waktu reservasi.</li>
+                        <li>Private Meeting Room tersedia untuk 4-8 orang dengan biaya tambahan Rp 100.000/jam (termasuk 1 liter kopi).</li>
+                        <li>Untuk grup 9+ orang, silakan hubungi kami langsung melalui WhatsApp.</li>
+                        <li>Reservasi saat weekend sangat direkomendasikan 1-2 hari sebelumnya.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div class="page" id="page-contact">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Kontak</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Mari Berbicara</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Pertanyaan, saran, atau sekadar ingin menyapa? Kami selalu senang mendengar dari Anda.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div>
+                        <div class="section-header left" style="margin-bottom:32px;">
+                            <div class="section-tag">
+                                <div class="section-tag-line"></div>
+                                <span class="caption">Kirim Pesan</span>
+                            </div>
+                            <h2 class="section-title heading-1">Hubungi Kami</h2>
+                        </div>
+                        <form class="contact-form" onsubmit="event.preventDefault(); alert('Pesan Anda telah terkirim! Tim kami akan membalas dalam 24 jam.');">
+                            <div class="form-group">
+                                <label class="form-label">Nama Lengkap *</label>
+                                <input type="text" class="form-input" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email *</label>
+                                <input type="email" class="form-input" placeholder="email@domain.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Subjek *</label>
+                                <select class="form-select" required>
+                                    <option value="">Pilih subjek</option>
+                                    <option value="general">Pertanyaan Umum</option>
+                                    <option value="reservation">Reservasi</option>
+                                    <option value="event">Event / Private Gathering</option>
+                                    <option value="wholesale">Wholesale / Partnership</option>
+                                    <option value="feedback">Feedback</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Pesan *</label>
+                                <textarea class="form-textarea" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width:100%;">
+                                <i data-lucide="send" style="width:18px;height:18px;"></i>
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="contact-info-card">
+                            <h3 class="contact-info-title"><i data-lucide="map-pin" style="width:18px;height:18px; color:var(--caramel);"></i> Alamat</h3>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i data-lucide="navigation" style="width:16px;height:16px;"></i></div>
+                                <div class="contact-info-text">
+                                    <p>Jl. Braga No. 45, Braga, Kec. Sumur Bandung, Bandung 40111</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <h3 class="contact-info-title"><i data-lucide="phone" style="width:18px;height:18px; color:var(--caramel);"></i> Kontak</h3>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i data-lucide="phone" style="width:16px;height:16px;"></i></div>
+                                <div class="contact-info-text"><p>+62 22 1234 5678</p></div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i data-lucide="message-circle" style="width:16px;height:16px;"></i></div>
+                                <div class="contact-info-text"><p>+62 812 3456 7890 (WhatsApp)</p></div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i data-lucide="mail" style="width:16px;height:16px;"></i></div>
+                                <div class="contact-info-text"><p>hello@brewhaven.co.id</p></div>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <h3 class="contact-info-title"><i data-lucide="clock" style="width:18px;height:18px; color:var(--caramel);"></i> Jam Buka</h3>
+                            <div class="hours-grid">
+                                <div class="hours-item"><div class="hours-day">Senin - Jumat</div><div class="hours-time">07:00 - 22:00</div></div>
+                                <div class="hours-item"><div class="hours-day">Sabtu - Minggu</div><div class="hours-time">08:00 - 23:00</div></div>
+                            </div>
+                            <p style="font-size:0.8125rem; color:var(--text-muted); margin-top:12px;">Kitchen last order: 30 menit sebelum tutup</p>
+                        </div>
+                        <div class="contact-info-card">
+                            <h3 class="contact-info-title"><i data-lucide="share-2" style="width:18px;height:18px; color:var(--caramel);"></i> Media Sosial</h3>
+                            <div style="display:flex; gap:12px;">
+                                <a href="#" class="footer-social-link" style="width:44px; height:44px; border:1px solid var(--border); color:var(--text-muted);"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
+                                <a href="#" class="footer-social-link" style="width:44px; height:44px; border:1px solid var(--border); color:var(--text-muted);"><i data-lucide="facebook" style="width:18px;height:18px;"></i></a>
+                                <a href="#" class="footer-social-link" style="width:44px; height:44px; border:1px solid var(--border); color:var(--text-muted);"><i data-lucide="twitter" style="width:18px;height:18px;"></i></a>
+                                <a href="#" class="footer-social-link" style="width:44px; height:44px; border:1px solid var(--border); color:var(--text-muted;"><i data-lucide="youtube" style="width:18px;height:18px;"></i></a>
+                            </div>
+                        </div>
+                        <div class="map-placeholder">
+                            <i data-lucide="map" style="width:40px;height:40px; margin-bottom:8px;"></i>
+                            <span>Google Maps Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 404 PAGE -->
+    <div class="page" id="page-404">
+        <section class="section" style="padding-top:160px;">
+            <div class="container">
+                <div class="error-page">
+                    <div>
+                        <div class="error-code">404</div>
+                        <h1 class="font-serif" style="font-size:1.75rem; font-weight:600; margin-bottom:12px; color:var(--espresso);">Halaman Tidak Ditemukan</h1>
+                        <p style="color:var(--text-muted); margin-bottom:32px;">Maaf, halaman yang Anda cari tidak tersedia. Mungkin Anda ingin secangkir kopi sambil mencari lagi?</p>
+                        <a href="#" class="btn btn-primary" onclick="navigateTo('home'); return false;">
+                            <i data-lucide="arrow-left" style="width:18px;height:18px;"></i>
+                            Kembali ke Beranda
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PRIVACY PAGE -->
+    <div class="page" id="page-privacy">
+        <section class="breadcrumb">
+            <div class="container">
+                <div class="breadcrumb-inner">
+                    <a href="#" class="breadcrumb-link" onclick="navigateTo('home'); return false;">Beranda</a>
+                    <i data-lucide="chevron-right" style="width:16px;height:16px;"></i>
+                    <span class="breadcrumb-current">Kebijakan Privasi</span>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="privacy-content">
+                    <h1 class="font-serif" style="font-size:2rem; font-weight:600; margin-bottom:32px; color:var(--espresso);">Kebijakan Privasi</h1>
+                    <p>Brew Haven Coffee berkomitmen untuk melindungi privasi dan keamanan data pribadi Anda. Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda.</p>
+                    <h2>1. Informasi yang Kami Kumpulkan</h2>
+                    <p>Kami dapat mengumpulkan informasi berikut:</p>
+                    <ul>
+                        <li>Informasi identitas (nama, nomor telepon, email)</li>
+                        <li>Informasi reservasi (tanggal, waktu, jumlah tamu)</li>
+                        <li>Preferensi dan catatan khusus</li>
+                        <li>Informasi teknis (alamat IP, browser)</li>
+                    </ul>
+                    <h2>2. Penggunaan Informasi</h2>
+                    <p>Informasi yang dikumpulkan digunakan untuk:</p>
+                    <ul>
+                        <li>Memproses reservasi dan pesanan</li>
+                        <li>Mengirimkan konfirmasi dan pengingat</li>
+                        <li>Meningkatkan layanan dan pengalaman pelanggan</li>
+                        <li>Program loyalitas Haven Rewards</li>
+                    </ul>
+                    <h2>3. Perlindungan Data</h2>
+                    <p>Kami menerapkan langkah-langkah keamanan teknis dan organisasi untuk melindungi data Anda dari akses tidak sah.</p>
+                    <h2>4. Berbagi Informasi</h2>
+                    <p>Kami tidak menjual atau membagikan informasi pribadi Anda kepada pihak ketiga tanpa persetujuan, kecuali untuk memenuhi kewajiban hukum.</p>
+                    <h2>5. Hak Anda</h2>
+                    <p>Anda memiliki hak untuk mengakses, mengoreksi, atau menghapus data pribadi Anda. Hubungi kami melalui email hello@brewhaven.co.id.</p>
+                    <p style="margin-top:40px; padding-top:24px; border-top:1px solid var(--border); color:var(--text-muted); font-size:0.875rem;">Terakhir diperbarui: 25 Juni 2024</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JOURNAL PAGE -->
+    <div class="page" id="page-journal">
+        <section style="padding:140px 0 80px; background:var(--espresso); color:var(--beige);">
+            <div class="container">
+                <div class="section-header left" style="color:var(--beige);">
+                    <div class="section-tag">
+                        <div class="section-tag-line" style="background:var(--caramel);"></div>
+                        <span class="caption" style="color:var(--caramel);">Journal</span>
+                    </div>
+                    <h1 class="display-2" style="color:var(--beige);">Cerita & Pengetahuan</h1>
+                    <p style="color:rgba(245,239,232,0.7); font-size:1.125rem; max-width:560px; line-height:1.8; margin-top:16px;">Artikel tentang kopi, brewing guides, dan cerita dari komunitas Brew Haven.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
+                    <div class="card" style="overflow:hidden;">
+                        <div style="aspect-ratio:16/10; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel);"><i data-lucide="book-open" style="width:40px;height:40px;"></i></div>
+                        <div style="padding:28px;">
+                            <div style="font-size:0.8125rem; color:var(--caramel); font-weight:600; margin-bottom:8px;">15 Juni 2024</div>
+                            <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Memahami Perbedaan Arabika dan Robusta</h3>
+                            <p style="font-size:0.9375rem; color:var(--text-muted); line-height:1.6;">Panduan lengkap untuk memahami dua spesies kopi utama, dari karakter rasa hingga kondisi tumbuh yang ideal.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="overflow:hidden;">
+                        <div style="aspect-ratio:16/10; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel);"><i data-lucide="book-open" style="width:40px;height:40px;"></i></div>
+                        <div style="padding:28px;">
+                            <div style="font-size:0.8125rem; color:var(--caramel); font-weight:600; margin-bottom:8px;">28 Mei 2024</div>
+                            <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Guide: V60 Pour Over untuk Pemula</h3>
+                            <p style="font-size:0.9375rem; color:var(--text-muted); line-height:1.6;">Langkah demi langkah menyeduh kopi sempurna dengan V60. Dari grind size hingga pouring technique.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="overflow:hidden;">
+                        <div style="aspect-ratio:16/10; background:var(--beige); display:flex; align-items:center; justify-content:center; color:var(--caramel);"><i data-lucide="book-open" style="width:40px;height:40px;"></i></div>
+                        <div style="padding:28px;">
+                            <div style="font-size:0.8125rem; color:var(--caramel); font-weight:600; margin-bottom:8px;">10 Mei 2024</div>
+                            <h3 class="font-serif" style="font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--espresso);">Mengenal Proses Natural vs Washed</h3>
+                            <p style="font-size:0.9375rem; color:var(--text-muted); line-height:1.6;">Bagaimana proses pasca-panen memengaruhi profil rasa kopi Anda. Eksplorasi mendalam untuk pecinta kopi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-logo">
+                        <div class="nav-logo-icon" style="width:36px; height:36px;">
+                            <i data-lucide="coffee" style="width:18px;height:18px;"></i>
+                        </div>
+                        <span>Brew Haven</span>
+                    </div>
+                    <p class="footer-brand-desc">
+                        Kafe specialty coffee di Bandung yang menghadirkan pengalaman kopi autentik dengan single origin Indonesia, pastry artisan, dan ruang coworking yang nyaman.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+                        <a href="#" class="footer-social-link"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
+                        <a href="#" class="footer-social-link"><i data-lucide="twitter" style="width:16px;height:16px;"></i></a>
+                        <a href="#" class="footer-social-link"><i data-lucide="youtube" style="width:16px;height:16px;"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Tautan</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link" onclick="navigateTo('home'); return false;">Beranda</a>
+                        <a href="#" class="footer-link" onclick="navigateTo('about'); return false;">Tentang Kami</a>
+                        <a href="#" class="footer-link" onclick="navigateTo('menu'); return false;">Menu</a>
+                        <a href="#" class="footer-link" onclick="navigateTo('beans'); return false;">Biji Kopi</a>
+                        <a href="#" class="footer-link" onclick="navigateTo('workshops'); return false;">Workshop</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Layanan</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link" onclick="navigateTo('reservation'); return false;">Reservasi</a>
+                        <a href="#" class="footer-link" onclick="navigateTo('events'); return false;">Event</a>
+                        <a href="#" class="footer-link" onclick="navigateTo('merchandise'); return false;">Merchandise</a>
+                        <a href="#" class="footer-link" onclick="navigateTo('journal'); return false;">Journal</a>
+                        <a href="#" class="footer-link" onclick="navigateTo('contact'); return false;">Kontak</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Berlangganan</h4>
+                    <p style="font-size:0.875rem; color:rgba(245,239,232,0.6); margin-bottom:16px; line-height:1.6;">Dapatkan update menu, event, dan promo eksklusif langsung ke inbox Anda.</p>
+                    <div class="footer-newsletter">
+                        <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Terima kasih telah berlangganan!');">
+                            <input type="email" class="footer-newsletter-input" placeholder="Email Anda" required>
+                            <button type="submit" class="btn btn-caramel" style="padding:10px 20px;">
+                                <i data-lucide="send" style="width:14px;height:14px;"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2024 Brew Haven Coffee. Hak Cipta Dilindungi.</div>
+                <div style="display:flex; gap:24px;">
+                    <a href="#" class="footer-link" onclick="navigateTo('privacy'); return false;">Kebijakan Privasi</a>
+                    <a href="#" class="footer-link" onclick="navigateTo('404'); return false;">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentPage = 'home';
+
+        function navigateTo(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const targetPage = document.getElementById('page-' + page);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                currentPage = page;
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === page) link.classList.add('active');
+                });
+                window.scrollTo(0, 0);
+                lucide.createIcons();
+            }
+        }
+
+        function toggleMobileNav() {
+            document.getElementById('mobileNav').classList.toggle('open');
+            document.getElementById('mobileNavOverlay').classList.toggle('open');
+        }
+
+        function toggleFaq(element) {
+            element.parentElement.classList.toggle('open');
+        }
+
+        function switchMenuTab(category, btn) {
+            document.querySelectorAll('.menu-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            ['coffee', 'signature', 'noncoffee', 'food'].forEach(cat => {
+                document.getElementById('menu' + cat.charAt(0).toUpperCase() + cat.slice(1)).style.display = cat === category ? 'grid' : 'none';
+            });
+        }
+
+        function handleNavbarScroll() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            window.addEventListener('scroll', handleNavbarScroll);
+            setTimeout(() => { document.getElementById('loading').classList.add('hidden'); }, 500);
+        });
+    </script>
+</body>
+</html>
