@@ -13,6 +13,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        /* Portfolio Notice Bar */
+.portfolio-notice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    background: rgba(255,255,255,0.9);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+    z-index: 9999;
+    pointer-events: none; /* tidak mengganggu interaksi user */
+    backdrop-filter: blur(4px);
+}
+
+.portfolio-notice-track {
+    display: inline-block;
+    white-space: nowrap;
+    line-height: 28px;
+    color: #666;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    animation: marquee 35s linear infinite;
+    padding-left: 100%;
+}
+
         :root {
             --espresso: #2B1D17; --espresso-light: #3D2B22; --beige: #F5EFE8; --beige-dark: #E8DFD4;
             --caramel: #C68642; --caramel-light: #D4A574; --forest: #3F5E45; --forest-light: #5A7A5F;
@@ -269,6 +295,11 @@
     </style>
 </head>
 <body>
+    <div class="portfolio-notice">
+    <div class="portfolio-notice-track">
+        Portfolio Version — Developed by Habby Pratama Diwan (DONE. Creative Studio). This showcase represents the final client-approved version deployed privately for portfolio purposes. Any modifications made after project delivery are outside our control and responsibility.
+    </div>
+</div>
 
     <!-- Loading -->
     <div class="loading" id="loading"><div class="loading-spinner"></div></div>
